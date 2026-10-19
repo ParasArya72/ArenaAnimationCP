@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Arena Animation Connaught Place</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18053970781"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18053970781');
+    </script>
+
+    <style>
+        /* ---------- Thank You Page Styles ---------- */
+        .thankyou-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-light);
+            padding-top: 60px;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+        }
+
+        .thankyou-card {
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3rem);
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            border-top: 4px solid var(--brand-red);
+            box-shadow: var(--shadow-lg);
+            animation: cardEntry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(24px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .success-icon-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+        }
+
+        .success-icon {
+            width: 100%;
+            height: 100%;
+            background: var(--brand-red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon-pulse {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            opacity: 0.25;
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.85);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .thankyou-card h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--brand-red);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .thankyou-card .subtitle {
+            font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 440px;
+            margin-inline: auto;
+        }
+
+        .thankyou-card .subtitle strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .title-accent-ty {
+            display: block;
+            width: 48px;
+            height: 3px;
+            background: var(--brand-red);
+            margin: 0.6rem auto 1.5rem;
+            border-radius: 2px;
+        }
+
+        /* Steps */
+        .next-steps {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .step-card {
+            flex: 1;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .step-card:hover {
+            border-color: var(--brand-red);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--brand-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-icon svg {
+            width: 18px;
+            height: 18px;
+            color: #fff;
+            stroke-width: 2.5;
+        }
+
+        .step-card h4 {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* CTAs */
+        .cta-group {
+            display: flex;
+            gap: 0.85rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-group .btn {
+            min-width: 175px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .cta-group .btn-outline-red {
+            background: transparent;
+            color: var(--brand-red);
+            border: 2px solid var(--brand-red);
+        }
+
+        .cta-group .btn-outline-red:hover {
+            background: var(--brand-red);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .next-steps {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 2rem 1rem;
+            }
+
+            .thankyou-card {
+                border-radius: 6px;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-736880036"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-736880036');
+    </script>
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-736880036/V7NYCLbQp_ICEKTLr98C' });
+    </script>
+</head>
+
+<body>
+    <!-- Event snippet for New_BH_Code_Landing_page conversion page -->
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-18053970781/4CHQCNbB3KkcEN325qBD' });
+    </script>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/logo/arenalogo.png" alt="Arena Logo" class="brand-logo">
+                <div class="nav-stat desktop-only">
+                    <span class="nav-stat-number">25+</span>
+                    <span class="nav-stat-label">YEARS<br>OF EXCELLENCE</span>
+                </div>
+            </a>
+
+            <ul class="nav-links desktop-only">
+                <li><a href="index.html#hero">Home</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html#courses" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Courses
+                        <svg class="dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="course-animation.html">Animation</a></li>
+                        <li><a href="course-vfx.html">VFX &amp; Compositing</a></li>
+                        <li><a href="course-uiux.html">UI/UX &amp; Website Design</a></li>
+                        <li><a href="course-gaming.html">Gaming &amp; Interactive</a></li>
+                        <li><a href="course-architecture.html">Architecture &amp; Interior Design</a></li>
+                        <li><a href="course-graphic-design.html">Graphic Design &amp; Motion Graphics</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#showcase">Student Work</a></li>
+                <li><a href="index.html#placements">Placements</a></li>
+                <li><a href="index.html#footer">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html" class="nav-cta desktop-only">Back to Home</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="#222" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-drawer" id="navDrawer">
+            <div class="drawer-header">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo/arenalogo.png" alt="Arena Logo" class="brand-logo">
+                </a>
+                <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="drawer-links">
+                <li><a href="index.html#hero">Home</a></li>
+                <li class="drawer-dropdown">
+                    <div class="drawer-dropdown-toggle">
+                        <a href="index.html#courses">Courses</a>
+                        <button type="button" class="drawer-toggle-btn" aria-label="Toggle courses submenu">
+                            <svg class="drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="drawer-submenu">
+                        <li><a href="course-animation.html">Animation</a></li>
+                        <li><a href="course-vfx.html">VFX &amp; Compositing</a></li>
+                        <li><a href="course-uiux.html">UI/UX &amp; Website Design</a></li>
+                        <li><a href="course-gaming.html">Gaming &amp; Interactive</a></li>
+                        <li><a href="course-architecture.html">Architecture &amp; Interior Design</a></li>
+                        <li><a href="course-graphic-design.html">Graphic Design &amp; Motion Graphics</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#showcase">Student Work</a></li>
+                <li><a href="index.html#placements">Placements</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+            <a href="index.html" class="drawer-cta">Back to Home</a>
+        </div>
+    </nav>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <div class="thankyou-wrapper">
+        <main class="content-container">
+            <div class="thankyou-card">
+                <div class="success-icon-wrapper">
+                    <div class="icon-pulse"></div>
+                    <div class="success-icon">
+                        <i data-lucide="check" size="36"></i>
+                    </div>
+                </div>
+                <h1>Enquiry Submitted!</h1>
+                <span class="title-accent-ty"></span>
+                <p class="subtitle">Thank you for reaching out to <strong>Arena Animation Connaught Place</strong>. Our
+                    experts will contact you within the next <strong>10 minutes</strong>.</p>
+
+                <div class="next-steps">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i data-lucide="phone-call"></i>
+                        </div>
+                        <h4>Expect a Call</h4>
+                        <p>Our career counselor will reach out to discuss your goals.</p>
+                    </div>
+
+                </div>
+
+                <div class="cta-group">
+                    <a href="https://arenaanimationcp.com/" target="_blank" class="btn btn-primary">
+                        <i data-lucide="home" size="16"></i>
+                        Explore More
+                    </a>
+                    <a href="https://www.instagram.com/arenaconnaughtplace/" target="_blank"
+                        class="btn btn-outline-red">
+                        <i data-lucide="instagram" size="16"></i>
+                        Follow Our Work
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <a href="#" class="logo">
+                            <img src="assets/logo/arenalogo-white.png" alt="Arena Logo" class="brand-logo">
+                        </a>
+                        <p>Leading the digital revolution in creative education since 2001. Empowering the next
+                            generation of designers and animators.</p>
+                        <div class="footer-contact-info">
+                            <div class="footer-contact-item">
+                                <i data-lucide="map-pin"></i>
+                                <a href="https://maps.app.goo.gl/dDzfqB27xJVJE24p8" target="_blank">A-19, First Floor,
+                                    Onkar Deep Building, Connaught Place, New Delhi - 110001</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i data-lucide="phone"></i>
+                                <a href="tel:+919650679762">+91 96506 79762</a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i data-lucide="mail"></i>
+                                <a href="mailto:info@arenaanimationcp.com">info@arenaanimationcp.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#hero">Home</a></li>
+                            <li><a href="index.html#courses">Courses</a></li>
+                            <li><a href="index.html#showcase">Portfolio</a></li>
+                            <li><a href="index.html">About Us</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Courses</h4>
+                        <ul>
+                            <li><a href="index.html#courses">3D Animation</a></li>
+                            <li><a href="index.html#courses">VFX Master</a></li>
+                            <li><a href="index.html#courses">Game Design</a></li>
+                            <li><a href="index.html#courses">UI/UX Pro</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Follow Us</h4>
+                        <div class="footer-socials">
+                            <a href="https://www.instagram.com/arenaconnaughtplace/" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg>
+                                Instagram
+                            </a>
+                            <a href="https://www.facebook.com/arenaconnaughtplace" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                                Facebook
+                            </a>
+                            <a href="https://www.linkedin.com/in/arena-animation-connaught-place-505a11395/"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect width="4" height="12" x="2" y="9" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://www.youtube.com/@arenaanimationconnaughtpla5576" target="_blank"
+                                rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                    <path d="m10 15 5-3-5-3z" />
+                                </svg>
+                                YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Arena Animation Creative. All rights reserved.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.instagram.com/arenaconnaughtplace/" target="_blank"
+                            style="color: var(--text-muted);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/arena-animation-connaught-place-505a11395/" target="_blank"
+                            style="color: var(--text-muted);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/arenaconnaughtplace" target="_blank"
+                            style="color: var(--text-muted);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
